@@ -50,5 +50,34 @@ export const formatFileSize = (fileSize, unit) => {
   return `${(size / (1024 * 1024 * 1024)).toFixed(2)} TB`
 }
 
+// 分块渲染
+export const useSliceRender = (count = 5) => {
+  const index = ref(0)
 
+  const defer = order => order <= index.value
+
+  const excute = () => requestAnimationFrame(() => {
+    if (index.value === count) return
+
+    index.value++
+    excute()
+  })
+
+  onMounted(() => excute())
+
+  return {
+    defer
+  }
+}
+
+// 下载
+export const downloadCommon = (url, name) => {
+  let a = document.createElement('a')
+  const event = new MouseEvent('click')
+  a.download = name
+  a.href = url
+  a.target = '_blank'
+  a.dispatchEvent(event)
+  a = null
+}
 
