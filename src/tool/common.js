@@ -24,7 +24,7 @@ const curry = (fnc, len = fnc.length) => {
   return curryFnc
 }
 
- const curryRight = (fnc, len = fnc.length) => {
+const curryRight = (fnc, len = fnc.length) => {
   const curryFnc = (...args) => {
     if (args.length >= len) return fnc(...args)
 
