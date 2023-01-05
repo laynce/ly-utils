@@ -1,4 +1,4 @@
-import {
+export {
   compose,
   asyncCompose,
   curry,
@@ -7,23 +7,10 @@ import {
   downloadCommon
 } from './tool/common.js'
 
-import {
+export {
   formatFileSize
 } from './tool/format.js'
 
-import {
+export {
   valid
 } from './tool/valid.js'
-
-
-
-export {
-  compose,
-  asyncCompose,
-  curry,
-  curryRight,
-  useSliceRender,
-  downloadCommon,
-  formatFileSize,
-  valid
-}
