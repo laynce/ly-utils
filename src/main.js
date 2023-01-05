@@ -14,3 +14,9 @@ export {
 export {
   valid
 } from './tool/valid.js'
+
+
+export {
+  isPlainObject,
+  isRegExp
+} from './tool/types.js'
